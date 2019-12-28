@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.stream.defaultConfig">
+    <require>org.nuxeo.runtime.stream.service</require>
+  <require>org.nuxeo.ecm.core.bulk.config</require>
+  <extension target="org.nuxeo.runtime.stream.service" point="logConfig">
+    <logConfig name="default" type="chronicle">
+      <option name="retention">4d</option>
+    </logConfig>
+    <logConfig name="bulk" type="chronicle">
+      <option name="retention">4d</option>
+      <log name="command" size="2" />
+      <log name="status" size="2" />
+      <log name="done" size="1" />
+    </logConfig>
+  </extension>
+  <require>org.nuxeo.ecm.platform.audit.service.NXAuditEventsService</require>
+  <extension target="org.nuxeo.runtime.stream.service" point="logConfig">
+     <logConfig name="audit" type="chronicle">
+       <option name="retention">4d</option>
+     </logConfig>
+  </extension>
+</component>

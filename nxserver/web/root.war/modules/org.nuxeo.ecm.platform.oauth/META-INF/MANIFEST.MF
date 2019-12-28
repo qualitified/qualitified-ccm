@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Built-By: jenkins
+Build-Jdk: 1.8.0_191
+Bundle-ManifestVersion: 2
+Bundle-Version: 0.0.0.SNAPSHOT
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Name: Nuxeo OAuth
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Nuxeo-Component: OSGI-INF/authentication-contrib.xml,OSGI-INF/oauth2se
+ rviceprovider-framework.xml,OSGI-INF/schema-contrib.xml,OSGI-INF/dire
+ ctory-contrib.xml,OSGI-INF/oauth2clientservice-framework.xml,OSGI-INF
+ /marshallers-contrib.xml
+Bundle-SymbolicName: org.nuxeo.ecm.platform.oauth;singleton:=true
+Nuxeo-WebModule: org.nuxeo.ecm.webengine.app.WebEngineModule;name=oaut
+ h2;extends=base;headless=true;package=org/nuxeo/ecm/webengine/oauth2
+

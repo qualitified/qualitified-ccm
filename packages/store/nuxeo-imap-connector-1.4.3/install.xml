@@ -1,0 +1,12 @@
+<install>
+  
+   <update file="${package.root}/install/bundles" todir="${env.bundles}" />
+   <update file="${package.root}/install/bundles-jsf-ui" todir="${env.bundles}" if="Packages.contains('nuxeo-jsf-ui')" />
+   <update file="${package.root}/install/bundles-web-ui" todir="${env.bundles}" if="Packages.contains('nuxeo-web-ui')" />
+  
+  
+   <copy file="${package.root}/install/artifacts-imapconnector.properties"
+     todir="${env.server.home}/sdk" overwrite="true" />
+   <copy file="${package.root}/install/test-artifacts-imapconnector.properties"
+     todir="${env.server.home}/sdk" overwrite="true" />
+</install>

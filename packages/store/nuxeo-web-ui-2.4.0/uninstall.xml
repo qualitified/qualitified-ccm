@@ -1,0 +1,3 @@
+<uninstall>
+  <rollback key="nxserver/bundles/nuxeo-web-ui" pkgId="nuxeo-web-ui-2.4.0" version="10.10"/>
+</uninstall>

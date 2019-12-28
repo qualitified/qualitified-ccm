@@ -1,0 +1,5 @@
+<uninstall>
+  <rollback key="nxserver/bundles/nuxeo-platform-spreadsheet-web-ui" pkgId="nuxeo-spreadsheet-1.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-spreadsheet-core" pkgId="nuxeo-spreadsheet-1.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-spreadsheet-web" pkgId="nuxeo-spreadsheet-1.4.3" version="10.10"/>
+</uninstall>

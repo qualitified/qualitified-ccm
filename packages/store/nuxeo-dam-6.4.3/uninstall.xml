@@ -1,0 +1,14 @@
+<uninstall>
+  <delete file="${env.server.home}/sdk/test-artifacts-dam.properties" md5="ce4a0a8f96a133aedaaff96fde754f6f"/>
+  <delete file="${env.server.home}/sdk/artifacts-dam.properties" md5="286e77abea7b2de1f13b659e8227582b"/>
+  <rollback key="nxserver/lib/jaudiotagger" pkgId="nuxeo-dam-6.4.3" version="2.0.3"/>
+  <rollback key="nxserver/bundles/nuxeo-dam-web-ui" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-video-api" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-imaging-convert" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-imaging-api" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-video-core" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-video-convert" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-dam" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-audio-core" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-imaging-core" pkgId="nuxeo-dam-6.4.3" version="10.10"/>
+</uninstall>

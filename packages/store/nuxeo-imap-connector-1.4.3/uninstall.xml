@@ -1,0 +1,9 @@
+<uninstall>
+  <delete file="${env.server.home}/sdk/test-artifacts-imapconnector.properties" md5="ce189f1332164def36bb94c7cc2ca7a2"/>
+  <delete file="${env.server.home}/sdk/artifacts-imapconnector.properties" md5="d2f7656e8c252891ed93b0807b103c54"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-mail-web-ui" pkgId="nuxeo-imap-connector-1.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-apt-extensions" pkgId="nuxeo-imap-connector-1.4.3" version="1.0"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-mail-core" pkgId="nuxeo-imap-connector-1.4.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-webengine-apt" pkgId="nuxeo-imap-connector-1.4.3" version="1.2"/>
+  <rollback key="nxserver/bundles/nuxeo-platform-mail-types" pkgId="nuxeo-imap-connector-1.4.3" version="10.10"/>
+</uninstall>

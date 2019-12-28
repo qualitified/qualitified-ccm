@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<registry>
+  <entry key="nxserver/bundles/nuxeo-dam-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-dam-web-ui-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-web-ui-10.10.jar">
+      <package>nuxeo-web-ui-2.4.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/qualitified-adhoc-reporting-core">
+    <version name="3.10" path="nxserver/bundles/qualitified-adhoc-reporting-core-3.10.jar">
+      <package>qualitified-adhoc-reporting-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/qualitified-crm-custom">
+    <version name="3.10" path="nxserver/bundles/qualitified-crm-custom-3.10.jar">
+      <package>qualitified-crm-package-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-mail-core">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-mail-core-10.10.jar">
+      <package>nuxeo-imap-connector-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/qualitified-crm-core">
+    <version name="3.10" path="nxserver/bundles/qualitified-crm-core-3.10.jar">
+      <package>qualitified-crm-package-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-video-convert">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-video-convert-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-mail-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-mail-web-ui-10.10.jar">
+      <package>nuxeo-imap-connector-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-imaging-convert">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-imaging-convert-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-audio-core">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-audio-core-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-dam">
+    <version name="10.10" path="nxserver/bundles/nuxeo-dam-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-apt-extensions">
+    <version name="1.0" path="nxserver/bundles/nuxeo-apt-extensions-1.0.jar">
+      <package>nuxeo-imap-connector-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-imaging-core">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-imaging-core-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-webengine-apt">
+    <version name="1.2" path="nxserver/bundles/nuxeo-webengine-apt-1.2.jar">
+      <package>nuxeo-imap-connector-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-spreadsheet-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-spreadsheet-web-ui-10.10.jar">
+      <package>nuxeo-spreadsheet-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-video-api">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-video-api-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-video-core">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-video-core-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/jaudiotagger">
+    <version name="2.0.3" path="nxserver/lib/jaudiotagger-2.0.3.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-spreadsheet-core">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-spreadsheet-core-10.10.jar">
+      <package>nuxeo-spreadsheet-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-spreadsheet-web">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-spreadsheet-web-10.10.jar">
+      <package>nuxeo-spreadsheet-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-imaging-api">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-imaging-api-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-mail-types">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-mail-types-10.10.jar">
+      <package>nuxeo-imap-connector-1.4.3</package>
+    </version>
+  </entry>
+</registry>

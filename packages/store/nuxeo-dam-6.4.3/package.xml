@@ -1,0 +1,26 @@
+<package type="addon" name="nuxeo-dam" version="6.4.3">
+  <title>Nuxeo DAM</title>
+  <description>The Nuxeo DAM addon adds robust, extensible, Digital Asset Management capabilities to build solutions that help marketing and brand managers catalog, process, store, retrieve, and distribute rich media content, including images, audio and video.
+  </description>
+  <home-page>https://doc.nuxeo.com/nxdoc/digital-asset-management-dam/</home-page>
+  <vendor>Nuxeo</vendor>
+  <installer restart="true" />
+  <uninstaller restart="true" />
+  <!-- <hotreload-support>false</hotreload-support> -->
+  <!-- <require-terms-and-conditions-acceptance>false -->
+  <!-- </require-terms-and-conditions-acceptance> -->
+  <nuxeo-validation>nuxeo_certified</nuxeo-validation>
+  <production-state>production_ready</production-state>
+  <supported>true</supported>
+  <platforms>
+    <platform>server-10.10</platform>
+    <platform>server-10.10-*</platform>
+  </platforms>
+  <optional-dependencies>
+    <package>nuxeo-jsf-ui</package>
+    <package>nuxeo-web-ui</package>
+  </optional-dependencies>
+  <license>LGPL</license>
+  <license-url>http://www.gnu.org/licenses/lgpl.html</license-url>
+  <visibility>PUBLIC</visibility>
+</package>

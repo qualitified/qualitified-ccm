@@ -1,0 +1,22 @@
+<package type="addon" name="nuxeo-template-rendering" version="6.8.3">
+  <title>Template Rendering</title>
+  <description>The Nuxeo Template Rendering addon provides a way to associate a Nuxeo Document with a template that can be a Word document, an Excel sheet or an HTML website, and merge document properties with the template so as to produce the final document as a rendition of the initial one.</description>
+  <home-page>https://github.com/nuxeo/nuxeo-template-rendering</home-page>
+  <vendor>Nuxeo</vendor>
+  <installer restart="true" />
+  <uninstaller restart="true" />
+  <nuxeo-validation>nuxeo_certified</nuxeo-validation>
+  <production-state>production_ready</production-state>
+  <supported>true</supported>
+  <platforms>
+    <platform>server-10.10</platform>
+    <platform>server-10.10-*</platform>
+  </platforms>
+  <optional-dependencies>
+    <package>nuxeo-jsf-ui</package>
+    <package>nuxeo-web-ui</package>
+  </optional-dependencies>
+  <license>Apache 2.0</license>
+  <license-url>http://www.apache.org/licenses/LICENSE-2.0</license-url>
+  <visibility>PUBLIC</visibility>
+</package>

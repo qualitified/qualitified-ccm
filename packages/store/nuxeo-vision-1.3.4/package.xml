@@ -1,0 +1,26 @@
+<!-- See documentation at http://doc.nuxeo.com/x/HgIz -->
+<package type="addon" name="nuxeo-vision" version="1.3.4">
+  <title>Nuxeo Vision</title>
+  <description>
+The Nuxeo Vision addon provides a wrapper for Computer Vision Services. Currently, it supports the Google Vision API and the AWS Rekognition service. It allows retrieving relevant tags on images and videos. It also provides automation operations for customized re-use. The usages can easily be extended to a wide range of features including face recognition, auto-classification, OCR and more.
+  </description>
+  <home-page>https://doc.nuxeo.com/nxdoc/nuxeo-vision/</home-page>
+  <vendor>Nuxeo</vendor>
+  <installer restart="true" />
+  <uninstaller restart="true" />
+  <!-- <hotreload-support>false</hotreload-support> -->
+  <!-- <require-terms-and-conditions-acceptance>false</require-terms-and-conditions-acceptance> -->
+  <nuxeo-validation>nuxeo_certified</nuxeo-validation>
+  <production-state>production_ready</production-state>
+  <supported>true</supported>
+  <platforms>
+    <platform>server-10.10</platform>
+    <platform>server-10.10-*</platform>
+  </platforms>
+  <dependencies>
+    <package>nuxeo-dam</package>
+  </dependencies>
+  <license>Apache License, Version 2.0</license>
+  <license-url>http://www.apache.org/licenses/LICENSE-2.0</license-url>
+  <visibility>MARKETPLACE</visibility>
+</package>

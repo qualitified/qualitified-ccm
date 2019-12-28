@@ -1,0 +1,27 @@
+<package type="addon" name="nuxeo-imap-connector" version="1.4.3">
+  <title>Nuxeo IMAP Connector</title>
+  <description>
+    The Nuxeo IMAP Connector addon allows to fetch emails from an IMAP mailbox and import them as Documents in the Nuxeo Repository. 
+  </description>
+  <home-page>https://doc.nuxeo.com/userdoc/nuxeo-imap-connector/</home-page>
+  <vendor>Nuxeo</vendor>
+  <installer restart="true" />
+  <uninstaller restart="true" />
+  <!-- <hotreload-support>false</hotreload-support> -->
+  <require-terms-and-conditions-acceptance>true
+  </require-terms-and-conditions-acceptance>
+  <nuxeo-validation>nuxeo_certified</nuxeo-validation>
+  <production-state>production_ready</production-state>
+  <supported>true</supported>
+  <platforms>
+    <platform>server-10.10</platform>
+    <platform>server-10.10-*</platform>
+  </platforms>
+  <optional-dependencies>
+    <package>nuxeo-jsf-ui</package>
+    <package>nuxeo-web-ui</package>
+  </optional-dependencies>
+  <license>LGPL 2.1</license>
+  <license-url>http://www.gnu.org/licenses/lgpl-2.1.html</license-url>
+  <visibility>PUBLIC</visibility>
+</package>

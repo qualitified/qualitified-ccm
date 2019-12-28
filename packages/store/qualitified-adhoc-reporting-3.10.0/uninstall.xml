@@ -1,0 +1,7 @@
+<uninstall>
+  <config rmtemplate="qualitified-adhoc-reporting"/>
+  <delete file="${env.server.home}/templates/qualitified-adhoc-reporting/nuxeo.defaults" md5="14845ae73c3d94c431e43b5c4d7d7767"/>
+  <delete file="${env.server.home}/sdk/test-adhoc-reporting-artifacts.properties" md5="d907f8e89e94d94aaf81c194c23e398a"/>
+  <delete file="${env.server.home}/sdk/adhoc-reporting-artifacts.properties" md5="836321ecf5e09daec87985f62fb51580"/>
+  <rollback key="nxserver/bundles/qualitified-adhoc-reporting-core" pkgId="qualitified-adhoc-reporting-3.10.0" version="3.10"/>
+</uninstall>
