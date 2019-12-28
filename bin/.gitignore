@@ -1,0 +1,5 @@
+/tmp/*
+/nxserver/nuxeo.war/*
+/nashorn_code_cache/*
+/log/*
+.DS_Store
