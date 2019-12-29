@@ -1,0 +1,44 @@
+<link rel="import" href="../qualitified-custom-fields.html">
+<dom-module id="nuxeo-interaction-edit-layout">
+  <template>
+    <style>
+      *[role=widget] {
+        padding: 5px;
+      }
+    </style>
+    <nuxeo-input role="widget" value="{{document.properties.dc:title}}" label="[[i18n('label.metadata.interaction.title')]]"></nuxeo-input>
+
+    <nuxeo-textarea role="widget" value="{{document.properties.dc:description}}" label="[[i18n('label.metadata.interaction.description')]]"></nuxeo-textarea>
+
+    <nuxeo-directory-suggestion role="widget" value="{{document.properties.interaction:status}}" label="[[i18n('label.metadata.status')]]" required="true" directory-name="IntStatus" min-chars="0"></nuxeo-directory-suggestion>
+
+    <nuxeo-directory-suggestion role="widget" value="{{document.properties.interaction:activity}}" label="[[i18n('label.metadata.activity')]]" required="true" directory-name="IntActivity" min-chars="0"></nuxeo-directory-suggestion>
+
+    <nuxeo-date-picker value="{{document.properties.interaction:date}}" label="[[i18n('label.metadata.date')]]" required="true" role="widget"></nuxeo-date-picker>
+    <qualitified-custom-fields document="{{document}}" mode="edit"></qualitified-custom-fields>
+    <nuxeo-document-suggestion role="widget" value="{{document.properties.interaction:contact}}" label="[[i18n('label.metadata.contact')]]" schemas="[Contact]"></nuxeo-document-suggestion>
+
+    <nuxeo-document-suggestion role="widget" value="{{document.properties.interaction:opportunity}}" label="[[i18n('label.metadata.opportunity')]]" schemas="[Opportunity]"></nuxeo-document-suggestion>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+      Polymer({
+        is: 'nuxeo-interaction-edit-layout',
+        behaviors: [Nuxeo.LayoutBehavior],
+        properties: {
+
+          /**
+           * @doctype Interaction
+           */
+          document: {
+            type: Object
+          },
+
+        }
+      });
+    })();
+  </script>
+</dom-module>

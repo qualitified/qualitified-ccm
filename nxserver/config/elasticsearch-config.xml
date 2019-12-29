@@ -4,7 +4,7 @@
 
   <extension target="org.nuxeo.elasticsearch.ElasticSearchComponent" point="elasticSearchEmbeddedServer">
     <elasticSearchEmbeddedServer clusterName="nuxeoCluster" nodeName="nuxeoNode"
-      pathData="/Users/michaelgena/Dropbox/QUALITIFIED/projects/qualitified-ccm-distribution-3.10/nxserver/data/elasticsearch" pathLogs="/Users/michaelgena/Dropbox/QUALITIFIED/projects/qualitified-ccm-distribution-3.10/log/elasticsearch"
+      pathData="/Users/michaelgena/Dropbox/QUALITIFIED/projects/qualitified-ccm/nxserver/data/elasticsearch" pathLogs="/Users/michaelgena/Dropbox/QUALITIFIED/projects/qualitified-ccm/log/elasticsearch"
       httpEnabled="true" networkHost="127.0.0.1" />
   </extension>
 

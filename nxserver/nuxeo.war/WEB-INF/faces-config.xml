@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+  version="2.0">
+
+  <factory>
+
+    
+
+  </factory>
+
+  
+
+  <navigation-rule>
+
+    
+
+  </navigation-rule>
+
+  
+
+  <!-- Facelets support -->
+  <application>
+
+    
+
+    <locale-config>
+    <default-locale>en</default-locale>
+    <supported-locale>en_GB</supported-locale>
+    <supported-locale>en_US</supported-locale>
+</locale-config>
+<message-bundle>messages</message-bundle>
+<locale-config>
+    <supported-locale>de</supported-locale>
+    <!-- German - Germany -->
+    <supported-locale>de_DE</supported-locale>
+    <!-- German - Germany -->
+    <supported-locale>es</supported-locale>
+    <!-- Spanish - Spain -->
+    <supported-locale>es_ES</supported-locale>
+    <!-- Spanish - Spain -->
+    <supported-locale>eu_ES</supported-locale>
+    <!-- Basque -->
+    <supported-locale>fr</supported-locale>
+    <!-- French - France -->
+    <supported-locale>fr_FR</supported-locale>
+    <!-- French - France -->
+    <supported-locale>id_ID</supported-locale>
+    <!-- Indonesian - Indonesia -->
+    <supported-locale>it_IT</supported-locale>
+    <!-- Italian - Italy -->
+    <supported-locale>ja</supported-locale>
+    <!-- Japanese (Gregorian calendar) - Japan -->
+    <supported-locale>ja_JP</supported-locale>
+    <!-- Japanese (Gregorian calendar) - Japan -->
+    <supported-locale>nl</supported-locale>
+    <!-- Dutch - Netherlands -->
+    <supported-locale>nl_NL</supported-locale>
+    <!-- Dutch - Netherlands -->
+    <supported-locale>sq_AL</supported-locale>
+    <!-- Albanian -->
+    <supported-locale>sv_SE</supported-locale>
+    <!-- Swedish -->
+    <supported-locale>zh_CN</supported-locale>
+    <!-- Chinese (Simplified) - China -->
+</locale-config>
+
+
+  </application>
+
+  <lifecycle>
+
+    
+
+  </lifecycle>
+
+  <!-- custom components, renderers, tags -->
+
+  
+
+  <render-kit>
+
+    
+
+  </render-kit>
+
+  
+
+  
+
+</faces-config>
