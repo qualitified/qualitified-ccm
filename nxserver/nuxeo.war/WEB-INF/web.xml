@@ -1,0 +1,636 @@
+<?xml version="1.0" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  version="2.4">
+
+  <listener>
+    <listener-class>
+				org.nuxeo.runtime.deployment.NuxeoStarter
+			</listener-class>
+</listener>
+<listener>
+    <listener-class>
+        org.nuxeo.ecm.web.resources.wro.servlet.NuxeoWroServletContextListener
+      </listener-class>
+</listener>
+<listener>
+    <listener-class>
+        org.nuxeo.ecm.web.resources.wro.servlet.NuxeoWroPageServletContextListener
+      </listener-class>
+</listener>
+<listener>
+    <listener-class>
+        <!-- this is a wrapper that holds off running NuxeoCmisContextListener
+        (the real listener) until Nuxeo is fully initialized -->
+        org.nuxeo.ecm.core.opencmis.bindings.ContextListenerDelayer
+      </listener-class>
+</listener>
+
+
+  <!-- put encoding filter with expection filter to make sure it's
+      registered first -->
+<filter>
+    <display-name>Nuxeo Encoding Filter</display-name>
+    <filter-name>NuxeoEncodingFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.web.common.encoding.NuxeoEncodingFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>NuxeoEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter>
+    <display-name>External Request Filter</display-name>
+    <filter-name>ExternalRequestFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.web.common.external.ExternalRequestFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>ExternalRequestFilter</filter-name>
+    <url-pattern>/login.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter>
+    <display-name>Nuxeo Exception Filter</display-name>
+    <filter-name>NuxeoExceptionFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.web.common.exceptionhandling.NuxeoExceptionFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>NuxeoExceptionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+
+
+  <filter>
+    <display-name>Nuxeo CORS and CSRF Filter</display-name>
+    <filter-name>NuxeoCorsCsrfFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.web.common.requestcontroller.filter.NuxeoCorsCsrfFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>NuxeoCorsCsrfFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+  <listener>
+    <listener-class>org.nuxeo.ecm.platform.web.common.session.NuxeoSessionListener</listener-class>
+</listener>
+<filter>
+    <display-name>Nuxeo Request Controller Filter</display-name>
+    <filter-name>NuxeoRequestController</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.web.common.requestcontroller.filter.NuxeoRequestControllerFilter
+      </filter-class>
+</filter>
+<filter>
+    <display-name>Nuxeo Authentication Filter</display-name>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.ui.web.auth.NuxeoAuthenticationFilter
+      </filter-class>
+</filter>
+
+
+  <filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter
+      </filter-name>
+    <url-pattern>/oauthGrant.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter
+      </filter-name>
+    <url-pattern>/oauth2Grant.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter
+      </filter-name>
+    <url-pattern>/oauth2/authorize</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter
+      </filter-name>
+    <url-pattern>/oauth2/authorize_submit</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/ui/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoRequestController</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/authentication/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/acquire_token.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoRequestController</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/startup</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/nxfile/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/nxbigfile/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/nxbigblob/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/nxbigzipfile/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/nxdownloadinfo/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/logout</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/login</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/atom/cmis/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/atom/cmis10/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/json/cmis/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+
+
+  <!-- XXX AT: for org.nuxeo.ecm.platform.ui.web module: order of filters matters.
+    Others modules should use FILTER. -->
+  <filter>
+    <display-name>Log4j Web MDC Filter</display-name>
+    <filter-name>Log4JWebFilter</filter-name>
+    <filter-class>org.nuxeo.ecm.core.management.jtajca.internal.Log4jWebFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>Log4JWebFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter>
+    <display-name>Nuxeo Standby Filter</display-name>
+    <filter-name>NuxeoStandby</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.web.common.requestcontroller.filter.NuxeoStandbyFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>NuxeoStandby</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+<filter>
+    <display-name>Nuxeo Thread Tracker Filter</display-name>
+    <filter-name>NuxeoThreadTracker</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.platform.web.common.requestcontroller.filter.NuxeoThreadTrackerFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>NuxeoThreadTracker</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+  <filter>
+    <filter-name>WroContextFilter</filter-name>
+    <filter-class>ro.isdc.wro.http.WroContextFilter</filter-class>
+    <init-param>
+        <param-name>name</param-name>
+        <param-value>bundle</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>WroContextFilter</filter-name>
+    <url-pattern>/wro/api/v1/resource/bundle/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+</filter-mapping>
+<filter>
+    <filter-name>WroFilter</filter-name>
+    <filter-class>ro.isdc.wro.http.WroFilter</filter-class>
+    <init-param>
+        <param-name>name</param-name>
+        <param-value>bundle</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>WroFilter</filter-name>
+    <url-pattern>/wro/api/v1/resource/bundle/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter>
+    <filter-name>WroPageContextFilter</filter-name>
+    <filter-class>ro.isdc.wro.http.WroContextFilter</filter-class>
+    <init-param>
+        <param-name>name</param-name>
+        <param-value>page</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>WroPageContextFilter</filter-name>
+    <url-pattern>/wro/api/v1/resource/page/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+</filter-mapping>
+<filter>
+    <filter-name>WroPageFilter</filter-name>
+    <filter-class>ro.isdc.wro.http.WroFilter</filter-class>
+    <init-param>
+        <param-name>name</param-name>
+        <param-value>page</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>WroPageFilter</filter-name>
+    <url-pattern>/wro/api/v1/resource/page/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+
+
+  
+
+  
+
+  
+
+  
+
+  <servlet>
+    <servlet-name>OAuth 1 Servlet</servlet-name>
+    <servlet-class>org.nuxeo.ecm.platform.ui.web.auth.oauth.NuxeoOAuth1Servlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>OAuth 1 Servlet</servlet-name>
+    <url-pattern>/oauth/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>OAuth2 Servlet</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.platform.oauth2.NuxeoOAuth2Servlet
+      </servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>OAuth2 Servlet</servlet-name>
+    <url-pattern>/oauth2/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>Nuxeo Resource Servlet</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.webengine.servlet.ResourceServlet
+      </servlet-class>
+    <init-param>
+        <param-name>prefix</param-name>
+        <param-value>/nuxeo/site/skin</param-value>
+    </init-param>
+    <!-- this is required so that prefix param is initialized before webengine is started -->
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo Resource Servlet</servlet-name>
+    <url-pattern>/site/skin/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>Nuxeo WebEngine Servlet</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.webengine.app.jersey.WebEngineServlet
+      </servlet-class>
+    <!-- servlet-class>org.nuxeo.ecm.webengine.app.jersey.ReloadingJerseyServlet</servlet-class>
+        <init-param>
+        <param-name>javax.ws.rs.Application</param-name>
+        <param-value>org.nuxeo.ecm.webengine.app.WebEngineApplication</param-value>
+        </init-param-->
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo WebEngine Servlet</servlet-name>
+    <url-pattern>/site/*</url-pattern>
+</servlet-mapping>
+<filter>
+    <display-name>HeaderFixFilter</display-name>
+    <filter-name>HeaderFixFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.webengine.app.HeaderFixFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>HeaderFixFilter</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter>
+    <display-name>RequestContextFilter</display-name>
+    <filter-name>RequestContextFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.webengine.jaxrs.context.RequestContextFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>RequestContextFilter</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter>
+    <display-name>WebContextFilter</display-name>
+    <filter-name>WebContextFilter</filter-name>
+    <filter-class>org.nuxeo.ecm.webengine.app.WebContextFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>WebContextFilter</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter>
+    <display-name>SessionCleanupFilter</display-name>
+    <filter-name>SessionCleanupFilter</filter-name>
+    <filter-class>
+        org.nuxeo.ecm.webengine.jaxrs.session.SessionCleanupFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>SessionCleanupFilter</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<servlet>
+    <servlet-name>Nuxeo Token Authentication Servlet</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.tokenauth.servlet.TokenAuthenticationServlet
+      </servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo Token Authentication Servlet</servlet-name>
+    <url-pattern>/authentication/token</url-pattern>
+</servlet-mapping>
+<!--
+      Declare this module in a separate application so
+      that it does not interfere with other jax-rs application
+      (including webengine apps).
+
+      The application name has to match the host name set in MANIFEST.MF
+    -->
+<servlet>
+    <servlet-name>Nuxeo Webdav Servlet</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.webengine.app.jersey.WebEngineServlet
+      </servlet-class>
+    <init-param>
+        <param-name>application.name</param-name>
+        <param-value>nuxeo-webdav</param-value>
+    </init-param>
+    <init-param>
+        <param-name>com.sun.jersey.config.feature.IgnoreMatrixParams</param-name>
+        <param-value>true</param-value>
+    </init-param>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo Webdav Servlet</servlet-name>
+    <url-pattern>/site/dav/*</url-pattern>
+</servlet-mapping>
+<filter>
+    <display-name>ElasticSearchFilter</display-name>
+    <filter-name>ElasticSearchFilter</filter-name>
+    <filter-class>
+        org.nuxeo.elasticsearch.ElasticSearchFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>ElasticSearchFilter</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <url-pattern>/api/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<servlet>
+    <servlet-name>Nuxeo API Forward servlet</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.restapi.server.APIServlet
+      </servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo API Forward servlet</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>Nuxeo Startup Page</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.platform.ui.web.auth.StartupPageServlet
+      </servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo Startup Page</servlet-name>
+    <url-pattern>/startup</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>Nuxeo Downloader</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.platform.ui.web.download.DownloadServlet
+      </servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo Downloader</servlet-name>
+    <url-pattern>/nxfile/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Nuxeo Downloader</servlet-name>
+    <url-pattern>/nxbigfile/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Nuxeo Downloader</servlet-name>
+    <url-pattern>/nxbigblob/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Nuxeo Downloader</servlet-name>
+    <url-pattern>/nxbigzipfile/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Nuxeo Downloader</servlet-name>
+    <url-pattern>/nxdownloadinfo/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Nuxeo Downloader</servlet-name>
+    <url-pattern>/nxblobstatus/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>Nuxeo JS Provider</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.platform.web.common.resources.AggregatedJSProvider
+      </servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo JS Provider</servlet-name>
+    <url-pattern>/js/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>atomcmis</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisAtomPubServlet
+      </servlet-class>
+    <init-param>
+        <param-name>callContextHandler</param-name>
+        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cmisVersion</param-name>
+        <param-value>1.1</param-value>
+    </init-param>
+</servlet>
+<servlet>
+    <servlet-name>atomcmis10</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisAtomPubServlet
+      </servlet-class>
+    <init-param>
+        <param-name>callContextHandler</param-name>
+        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cmisVersion</param-name>
+        <param-value>1.0</param-value>
+    </init-param>
+</servlet>
+<servlet>
+    <servlet-name>jsoncmis</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisBrowserBindingServlet
+      </servlet-class>
+    <init-param>
+        <param-name>callContextHandler</param-name>
+        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
+    </init-param>
+</servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>atomcmis</servlet-name>
+    <url-pattern>/atom/cmis/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>atomcmis10</servlet-name>
+    <url-pattern>/atom/cmis10/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>jsoncmis</servlet-name>
+    <url-pattern>/json/cmis/*</url-pattern>
+</servlet-mapping>
+
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/page_not_found.jsp</location>
+</error-page>
+
+
+  
+
+  <servlet>
+    <servlet-name>Nuxeo Status Servlet</servlet-name>
+    <servlet-class>org.nuxeo.ecm.core.management.statuses.StatusServlet
+      </servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo Status Servlet</servlet-name>
+    <url-pattern>/runningstatus</url-pattern>
+</servlet-mapping>
+
+
+  <security-role>
+    <description>The role required to access restricted content</description>
+    <role-name>admin</role-name>
+  </security-role>
+
+  <security-role>
+    <description>The role required to access restricted content</description>
+    <role-name>regular</role-name>
+  </security-role>
+
+  <session-config>
+    <session-timeout>60</session-timeout>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+
+</web-app>
