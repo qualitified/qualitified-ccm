@@ -105,13 +105,6 @@
   <filter-mapping>
     <filter-name>NuxeoAuthenticationFilter
       </filter-name>
-    <url-pattern>/oauthGrant.jsp</url-pattern>
-    <dispatcher>REQUEST</dispatcher>
-    <dispatcher>FORWARD</dispatcher>
-</filter-mapping>
-<filter-mapping>
-    <filter-name>NuxeoAuthenticationFilter
-      </filter-name>
     <url-pattern>/oauth2Grant.jsp</url-pattern>
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
@@ -132,12 +125,6 @@
 </filter-mapping>
 <filter-mapping>
     <filter-name>NuxeoAuthenticationFilter</filter-name>
-    <url-pattern>/ui/*</url-pattern>
-    <dispatcher>REQUEST</dispatcher>
-    <dispatcher>FORWARD</dispatcher>
-</filter-mapping>
-<filter-mapping>
-    <filter-name>NuxeoAuthenticationFilter</filter-name>
     <url-pattern>/site/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
@@ -145,6 +132,37 @@
 <filter-mapping>
     <filter-name>NuxeoRequestController</filter-name>
     <url-pattern>/site/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/atom/cmis/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/atom/cmis10/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/json/cmis/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter
+      </filter-name>
+    <url-pattern>/oauthGrant.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>NuxeoAuthenticationFilter</filter-name>
+    <url-pattern>/ui/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
 </filter-mapping>
 <filter-mapping>
@@ -209,24 +227,6 @@
 <filter-mapping>
     <filter-name>NuxeoAuthenticationFilter</filter-name>
     <url-pattern>/login</url-pattern>
-    <dispatcher>REQUEST</dispatcher>
-    <dispatcher>FORWARD</dispatcher>
-</filter-mapping>
-<filter-mapping>
-    <filter-name>NuxeoAuthenticationFilter</filter-name>
-    <url-pattern>/atom/cmis/*</url-pattern>
-    <dispatcher>REQUEST</dispatcher>
-    <dispatcher>FORWARD</dispatcher>
-</filter-mapping>
-<filter-mapping>
-    <filter-name>NuxeoAuthenticationFilter</filter-name>
-    <url-pattern>/atom/cmis10/*</url-pattern>
-    <dispatcher>REQUEST</dispatcher>
-    <dispatcher>FORWARD</dispatcher>
-</filter-mapping>
-<filter-mapping>
-    <filter-name>NuxeoAuthenticationFilter</filter-name>
-    <url-pattern>/json/cmis/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
 </filter-mapping>
@@ -336,14 +336,6 @@
   
 
   <servlet>
-    <servlet-name>OAuth 1 Servlet</servlet-name>
-    <servlet-class>org.nuxeo.ecm.platform.ui.web.auth.oauth.NuxeoOAuth1Servlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>OAuth 1 Servlet</servlet-name>
-    <url-pattern>/oauth/*</url-pattern>
-</servlet-mapping>
-<servlet>
     <servlet-name>OAuth2 Servlet</servlet-name>
     <servlet-class>
         org.nuxeo.ecm.platform.oauth2.NuxeoOAuth2Servlet
@@ -435,6 +427,76 @@
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
 </filter-mapping>
+<filter>
+    <display-name>ElasticSearchFilter</display-name>
+    <filter-name>ElasticSearchFilter</filter-name>
+    <filter-class>
+        org.nuxeo.elasticsearch.ElasticSearchFilter
+      </filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>ElasticSearchFilter</filter-name>
+    <url-pattern>/site/*</url-pattern>
+    <url-pattern>/api/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+<servlet>
+    <servlet-name>Nuxeo API Forward servlet</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.restapi.server.APIServlet
+      </servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Nuxeo API Forward servlet</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>atomcmis</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisAtomPubServlet
+      </servlet-class>
+    <init-param>
+        <param-name>callContextHandler</param-name>
+        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cmisVersion</param-name>
+        <param-value>1.1</param-value>
+    </init-param>
+</servlet>
+<servlet>
+    <servlet-name>atomcmis10</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisAtomPubServlet
+      </servlet-class>
+    <init-param>
+        <param-name>callContextHandler</param-name>
+        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cmisVersion</param-name>
+        <param-value>1.0</param-value>
+    </init-param>
+</servlet>
+<servlet>
+    <servlet-name>jsoncmis</servlet-name>
+    <servlet-class>
+        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisBrowserBindingServlet
+      </servlet-class>
+    <init-param>
+        <param-name>callContextHandler</param-name>
+        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
+    </init-param>
+</servlet>
+<servlet>
+    <servlet-name>OAuth 1 Servlet</servlet-name>
+    <servlet-class>org.nuxeo.ecm.platform.ui.web.auth.oauth.NuxeoOAuth1Servlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>OAuth 1 Servlet</servlet-name>
+    <url-pattern>/oauth/*</url-pattern>
+</servlet-mapping>
 <servlet>
     <servlet-name>Nuxeo Token Authentication Servlet</servlet-name>
     <servlet-class>
@@ -469,30 +531,6 @@
 <servlet-mapping>
     <servlet-name>Nuxeo Webdav Servlet</servlet-name>
     <url-pattern>/site/dav/*</url-pattern>
-</servlet-mapping>
-<filter>
-    <display-name>ElasticSearchFilter</display-name>
-    <filter-name>ElasticSearchFilter</filter-name>
-    <filter-class>
-        org.nuxeo.elasticsearch.ElasticSearchFilter
-      </filter-class>
-</filter>
-<filter-mapping>
-    <filter-name>ElasticSearchFilter</filter-name>
-    <url-pattern>/site/*</url-pattern>
-    <url-pattern>/api/*</url-pattern>
-    <dispatcher>REQUEST</dispatcher>
-    <dispatcher>FORWARD</dispatcher>
-</filter-mapping>
-<servlet>
-    <servlet-name>Nuxeo API Forward servlet</servlet-name>
-    <servlet-class>
-        org.nuxeo.ecm.restapi.server.APIServlet
-      </servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>Nuxeo API Forward servlet</servlet-name>
-    <url-pattern>/api/*</url-pattern>
 </servlet-mapping>
 <servlet>
     <servlet-name>Nuxeo Startup Page</servlet-name>
@@ -544,44 +582,6 @@
     <servlet-name>Nuxeo JS Provider</servlet-name>
     <url-pattern>/js/*</url-pattern>
 </servlet-mapping>
-<servlet>
-    <servlet-name>atomcmis</servlet-name>
-    <servlet-class>
-        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisAtomPubServlet
-      </servlet-class>
-    <init-param>
-        <param-name>callContextHandler</param-name>
-        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
-    </init-param>
-    <init-param>
-        <param-name>cmisVersion</param-name>
-        <param-value>1.1</param-value>
-    </init-param>
-</servlet>
-<servlet>
-    <servlet-name>atomcmis10</servlet-name>
-    <servlet-class>
-        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisAtomPubServlet
-      </servlet-class>
-    <init-param>
-        <param-name>callContextHandler</param-name>
-        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
-    </init-param>
-    <init-param>
-        <param-name>cmisVersion</param-name>
-        <param-value>1.0</param-value>
-    </init-param>
-</servlet>
-<servlet>
-    <servlet-name>jsoncmis</servlet-name>
-    <servlet-class>
-        org.nuxeo.ecm.core.opencmis.bindings.NuxeoCmisBrowserBindingServlet
-      </servlet-class>
-    <init-param>
-        <param-name>callContextHandler</param-name>
-        <param-value>org.nuxeo.ecm.core.opencmis.bindings.NuxeoAuthCallContextHandler</param-value>
-    </init-param>
-</servlet>
 
 
   <servlet-mapping>
