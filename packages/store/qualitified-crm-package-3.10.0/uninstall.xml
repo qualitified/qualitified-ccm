@@ -1,8 +1,0 @@
-<uninstall>
-  <config rmtemplate="qualitified-crm-package"/>
-  <delete file="${env.server.home}/templates/qualitified-crm-package/nuxeo.defaults" md5="9775093d804bd740477aca30037a657f"/>
-  <delete file="${env.server.home}/sdk/test-crm-artifacts.properties" md5="e8c53d01b9a14aadca22fb53e6bbb8a7"/>
-  <delete file="${env.server.home}/sdk/crm-artifacts.properties" md5="e2d4a5cad41bc8ff60f9e953b9d9a6d7"/>
-  <rollback key="nxserver/bundles/qualitified-crm-core" pkgId="qualitified-crm-package-3.10.0" version="3.10"/>
-  <rollback key="nxserver/bundles/qualitified-crm-custom" pkgId="qualitified-crm-package-3.10.0" version="3.10"/>
-</uninstall>

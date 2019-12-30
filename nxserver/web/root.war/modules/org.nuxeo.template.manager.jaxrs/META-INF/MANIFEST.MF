@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: jenkins
+Build-Jdk: 1.8.0_191
+Bundle-ManifestVersion: 1
+Bundle-Version: 1.0.0
+Bundle-Name: Nuxeo ECM Document template Manager JAXRS Binding
+Bundle-SymbolicName: org.nuxeo.template.manager.jaxrs;singleton:=true
+Nuxeo-Component: OSGI-INF/core-types-contrib.xml,OSGI-INF/types-contri
+ b.xml,OSGI-INF/life-cycle-contrib.xml,OSGI-INF/templateprocessor-cont
+ rib.xml
+Nuxeo-WebModule: org.nuxeo.template.jaxrs.JAXRSTemplatesApplication;na
+ me=DocumentTemplates
+

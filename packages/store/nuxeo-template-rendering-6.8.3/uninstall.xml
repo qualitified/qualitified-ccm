@@ -1,0 +1,23 @@
+<uninstall>
+  <delete file="${env.server.home}/sdk/test-artifacts-rendering.properties" md5="bd115762a3f1f3c12eb02cb8a1419163"/>
+  <delete file="${env.server.home}/sdk/artifacts-rendering.properties" md5="a945a33377d7c967ac2a9bf12b68248b"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.converter" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/commons-jexl2-do-not-remove" pkgId="nuxeo-template-rendering-6.8.3" version="2"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.template" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.core" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/jxls-reader" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.6-NX01"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.document.ods" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.template.freemarker" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.document" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/jxls-core" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.6-NX01"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.document.odt" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.remoting.resources" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/lib/fr.opensagres.xdocreport.document.docx" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-jaxrs-web-ui" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-web-ui" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-jaxrs" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-jxls" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-api" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-core" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-xdocreport" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+</uninstall>

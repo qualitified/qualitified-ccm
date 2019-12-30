@@ -1,24 +1,25 @@
 <?xml version="1.0"?>
 
 <registry>
-  <entry key="nxserver/bundles/nuxeo-dam-web-ui">
-    <version name="10.10" path="nxserver/bundles/nuxeo-dam-web-ui-10.10.jar">
-      <package>nuxeo-dam-6.4.3</package>
-    </version>
-  </entry>
-  <entry key="nxserver/bundles/nuxeo-web-ui">
-    <version name="10.10" path="nxserver/bundles/nuxeo-web-ui-10.10.jar">
-      <package>nuxeo-web-ui-2.4.0</package>
-    </version>
-  </entry>
   <entry key="nxserver/bundles/qualitified-adhoc-reporting-core">
     <version name="3.10" path="nxserver/bundles/qualitified-adhoc-reporting-core-3.10.jar">
       <package>qualitified-adhoc-reporting-3.10.0</package>
     </version>
   </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.document">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.document-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-template-rendering-jaxrs-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-template-rendering-jaxrs-web-ui-10.10.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+    </version>
+  </entry>
   <entry key="nxserver/bundles/qualitified-crm-custom">
     <version name="3.10" path="nxserver/bundles/qualitified-crm-custom-3.10.jar">
-      <package>qualitified-crm-package-3.10.0</package>
+      <package>qualitified-crm-3.10.0</package>
     </version>
   </entry>
   <entry key="nxserver/bundles/nuxeo-platform-mail-core">
@@ -26,19 +27,20 @@
       <package>nuxeo-imap-connector-1.4.3</package>
     </version>
   </entry>
+  <entry key="nxserver/lib/commons-jexl2-do-not-remove">
+    <version name="2" path="nxserver/lib/commons-jexl2-do-not-remove-2.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.template">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.template-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
   <entry key="nxserver/bundles/qualitified-crm-core">
     <version name="3.10" path="nxserver/bundles/qualitified-crm-core-3.10.jar">
-      <package>qualitified-crm-package-3.10.0</package>
-    </version>
-  </entry>
-  <entry key="nxserver/bundles/nuxeo-platform-video-convert">
-    <version name="10.10" path="nxserver/bundles/nuxeo-platform-video-convert-10.10.jar">
-      <package>nuxeo-dam-6.4.3</package>
-    </version>
-  </entry>
-  <entry key="nxserver/bundles/nuxeo-platform-mail-web-ui">
-    <version name="10.10" path="nxserver/bundles/nuxeo-platform-mail-web-ui-10.10.jar">
-      <package>nuxeo-imap-connector-1.4.3</package>
+      <package>qualitified-crm-3.10.0</package>
     </version>
   </entry>
   <entry key="nxserver/bundles/nuxeo-platform-imaging-convert">
@@ -61,6 +63,101 @@
       <package>nuxeo-imap-connector-1.4.3</package>
     </version>
   </entry>
+  <entry key="nxserver/bundles/nuxeo-template-rendering-jaxrs">
+    <version name="10.10" path="nxserver/bundles/nuxeo-template-rendering-jaxrs-10.10.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-spreadsheet-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-spreadsheet-web-ui-10.10.jar">
+      <package>nuxeo-spreadsheet-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-template-rendering-core">
+    <version name="10.10" path="nxserver/bundles/nuxeo-template-rendering-core-10.10.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.template.freemarker">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.template.freemarker-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.document.docx">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.document.docx-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-video-core">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-video-core-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.core">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.core-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.converter">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.converter-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-imaging-api">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-imaging-api-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-template-rendering-api">
+    <version name="10.10" path="nxserver/bundles/nuxeo-template-rendering-api-10.10.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-mail-types">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-mail-types-10.10.jar">
+      <package>nuxeo-imap-connector-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-dam-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-dam-web-ui-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-web-ui-10.10.jar">
+      <package>nuxeo-web-ui-2.4.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-template-rendering-jxls">
+    <version name="10.10" path="nxserver/bundles/nuxeo-template-rendering-jxls-10.10.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-video-convert">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-video-convert-10.10.jar">
+      <package>nuxeo-dam-6.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.remoting.resources">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.remoting.resources-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/nuxeo-platform-mail-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-platform-mail-web-ui-10.10.jar">
+      <package>nuxeo-imap-connector-1.4.3</package>
+    </version>
+  </entry>
+  <entry key="nxserver/lib/jxls-core">
+    <version name="1.0.6-NX01" path="nxserver/lib/jxls-core-1.0.6-NX01.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+    </version>
+  </entry>
   <entry key="nxserver/bundles/nuxeo-platform-imaging-core">
     <version name="10.10" path="nxserver/bundles/nuxeo-platform-imaging-core-10.10.jar">
       <package>nuxeo-dam-6.4.3</package>
@@ -71,9 +168,9 @@
       <package>nuxeo-imap-connector-1.4.3</package>
     </version>
   </entry>
-  <entry key="nxserver/bundles/nuxeo-platform-spreadsheet-web-ui">
-    <version name="10.10" path="nxserver/bundles/nuxeo-platform-spreadsheet-web-ui-10.10.jar">
-      <package>nuxeo-spreadsheet-1.4.3</package>
+  <entry key="nxserver/bundles/nuxeo-template-rendering-xdocreport">
+    <version name="10.10" path="nxserver/bundles/nuxeo-template-rendering-xdocreport-10.10.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
     </version>
   </entry>
   <entry key="nxserver/bundles/nuxeo-platform-video-api">
@@ -81,9 +178,9 @@
       <package>nuxeo-dam-6.4.3</package>
     </version>
   </entry>
-  <entry key="nxserver/bundles/nuxeo-platform-video-core">
-    <version name="10.10" path="nxserver/bundles/nuxeo-platform-video-core-10.10.jar">
-      <package>nuxeo-dam-6.4.3</package>
+  <entry key="nxserver/lib/jxls-reader">
+    <version name="1.0.6-NX01" path="nxserver/lib/jxls-reader-1.0.6-NX01.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
     </version>
   </entry>
   <entry key="nxserver/lib/jaudiotagger">
@@ -96,19 +193,26 @@
       <package>nuxeo-spreadsheet-1.4.3</package>
     </version>
   </entry>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.document.ods">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.document.ods-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
+    </version>
+  </entry>
   <entry key="nxserver/bundles/nuxeo-platform-spreadsheet-web">
     <version name="10.10" path="nxserver/bundles/nuxeo-platform-spreadsheet-web-10.10.jar">
       <package>nuxeo-spreadsheet-1.4.3</package>
     </version>
   </entry>
-  <entry key="nxserver/bundles/nuxeo-platform-imaging-api">
-    <version name="10.10" path="nxserver/bundles/nuxeo-platform-imaging-api-10.10.jar">
-      <package>nuxeo-dam-6.4.3</package>
+  <entry key="nxserver/lib/fr.opensagres.xdocreport.document.odt">
+    <version name="1.0.5" path="nxserver/lib/fr.opensagres.xdocreport.document.odt-1.0.5.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
+      <package>qualitified-crm-3.10.0</package>
     </version>
   </entry>
-  <entry key="nxserver/bundles/nuxeo-platform-mail-types">
-    <version name="10.10" path="nxserver/bundles/nuxeo-platform-mail-types-10.10.jar">
-      <package>nuxeo-imap-connector-1.4.3</package>
+  <entry key="nxserver/bundles/nuxeo-template-rendering-web-ui">
+    <version name="10.10" path="nxserver/bundles/nuxeo-template-rendering-web-ui-10.10.jar">
+      <package>nuxeo-template-rendering-6.8.3</package>
     </version>
   </entry>
 </registry>
