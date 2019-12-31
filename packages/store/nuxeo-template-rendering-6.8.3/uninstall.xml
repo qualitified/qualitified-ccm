@@ -15,6 +15,7 @@
   <rollback key="nxserver/lib/fr.opensagres.xdocreport.document.docx" pkgId="nuxeo-template-rendering-6.8.3" version="1.0.5"/>
   <rollback key="nxserver/bundles/nuxeo-template-rendering-jaxrs-web-ui" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
   <rollback key="nxserver/bundles/nuxeo-template-rendering-web-ui" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
+  <rollback key="nxserver/bundles/nuxeo-template-rendering-jsf" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
   <rollback key="nxserver/bundles/nuxeo-template-rendering-jaxrs" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
   <rollback key="nxserver/bundles/nuxeo-template-rendering-jxls" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
   <rollback key="nxserver/bundles/nuxeo-template-rendering-api" pkgId="nuxeo-template-rendering-6.8.3" version="10.10"/>
