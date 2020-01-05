@@ -1,6 +1,6 @@
 <uninstall>
   <config rmtemplate="qualitified-crm"/>
-  <delete file="${env.server.home}/templates/qualitified-crm/nuxeo.defaults" md5="3cdad5e560a40333e6a3fa4672c9cb75"/>
+  <delete file="${env.server.home}/templates/qualitified-crm/nuxeo.defaults" md5="55bc69e4ee8080aab37e836dbde39fc2"/>
   <delete file="${env.server.home}/sdk/test-crm-artifacts.properties" md5="e8c53d01b9a14aadca22fb53e6bbb8a7"/>
   <delete file="${env.server.home}/sdk/crm-artifacts.properties" md5="8b4e6cc56c5bfadd2a93b8b6356f0ca4"/>
   <rollback key="nxserver/lib/fr.opensagres.xdocreport.converter" pkgId="qualitified-crm-3.10.0" version="1.0.5"/>

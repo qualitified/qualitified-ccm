@@ -16,6 +16,9 @@
     <java>bundles/qualitified-adhoc-reporting-core-3.10.jar</java>
 </module>
 <module>
+    <java>bundles/nuxeo-routing-default-jsf-10.10.jar</java>
+</module>
+<module>
     <java>bundles/nuxeo-routing-default-10.10.jar</java>
 </module>
 <module>

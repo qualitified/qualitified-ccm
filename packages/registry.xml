@@ -16,14 +16,14 @@
       <package>qualitified-adhoc-reporting-3.10.0</package>
     </version>
   </entry>
-  <entry key="nxserver/bundles/qualitified-crm-custom">
-    <version name="3.10" path="nxserver/bundles/qualitified-crm-custom-3.10.jar">
-      <package>qualitified-crm-3.10.0</package>
-    </version>
-  </entry>
   <entry key="nxserver/bundles/nuxeo-platform-forms-layout-client">
     <version name="10.10" path="nxserver/bundles/nuxeo-platform-forms-layout-client-10.10.jar">
       <package>nuxeo-jsf-ui-10.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/qualitified-crm-custom">
+    <version name="3.10" path="nxserver/bundles/qualitified-crm-custom-3.10.jar">
+      <package>qualitified-crm-3.10.0</package>
     </version>
   </entry>
   <entry key="nxserver/bundles/nuxeo-platform-forms-layout-io">
@@ -31,15 +31,15 @@
       <package>nuxeo-jsf-ui-10.10.0</package>
     </version>
   </entry>
-  <entry key="nxserver/bundles/qualitified-crm-core">
-    <version name="3.10" path="nxserver/bundles/qualitified-crm-core-3.10.jar">
-      <package>qualitified-crm-3.10.0</package>
-    </version>
-  </entry>
   <entry key="nxserver/lib/jsr305">
     <base-version name="3.0.2" path="nxserver/lib/jsr305-3.0.2.jar"/>
     <version name="1.3.9" path="nxserver/lib/jsr305-1.3.9.jar">
       <package>nuxeo-jsf-ui-10.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/qualitified-crm-core">
+    <version name="3.10" path="nxserver/bundles/qualitified-crm-core-3.10.jar">
+      <package>qualitified-crm-3.10.0</package>
     </version>
   </entry>
   <entry key="nxserver/bundles/nuxeo-platform-comment-web">
