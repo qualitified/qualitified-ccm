@@ -16,14 +16,14 @@
       <package>nuxeo-jsf-ui-10.10.0</package>
     </version>
   </entry>
-  <entry key="nxserver/bundles/qualitified-crm-custom">
-    <version name="3.10" path="nxserver/bundles/qualitified-crm-custom-3.10.jar">
-      <package>qualitified-crm-3.10.0</package>
-    </version>
-  </entry>
   <entry key="nxserver/bundles/qualitified-adhoc-reporting-core">
     <version name="3.10" path="nxserver/bundles/qualitified-adhoc-reporting-core-3.10.jar">
       <package>qualitified-adhoc-reporting-3.10.0</package>
+    </version>
+  </entry>
+  <entry key="nxserver/bundles/qualitified-crm-custom">
+    <version name="3.10" path="nxserver/bundles/qualitified-crm-custom-3.10.jar">
+      <package>qualitified-crm-3.10.0</package>
     </version>
   </entry>
   <entry key="nxserver/bundles/nuxeo-platform-forms-layout-io">
